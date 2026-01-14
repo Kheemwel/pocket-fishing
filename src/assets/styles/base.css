@@ -1,0 +1,21 @@
+:root {
+  --color-blue: blue;
+  --color-gray: rgb(48, 48, 48);
+  --color-white: rgb(235, 235, 235);
+  --rarity-trash: #795548;
+  --rarity-common: #eceff1;
+  --rarity-rare: #2962ff;
+  --rarity-legendary: #ffd600;
+  --rarity-mythical: #aa00ff;
+  --rarity-secret: #607d8b;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-gray);
+  color: var(--color-white);
+}
