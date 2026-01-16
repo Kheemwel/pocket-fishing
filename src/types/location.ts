@@ -28,6 +28,7 @@ export interface Area {
   readonly description?: string
   readonly travelTimeFromOrigin: number // in in-game minutes
   readonly catchables?: DeepReadonly<CatchableId[]>
+  readonly tags?: ReadonlyArray<'fishing' | 'shop'>
 }
 
 export type SeasonMode =

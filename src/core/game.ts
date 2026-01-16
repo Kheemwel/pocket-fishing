@@ -3,6 +3,7 @@ import { AquariumSystem } from '@/systems/AquariumSystem'
 import { EffectSystem } from '@/systems/EffectSystem'
 import { FishingSystem } from '@/systems/FishingSystem'
 import { PlayerSystem } from '@/systems/PlayerSystem'
+import { TravelSystem } from '@/systems/TravelSystem'
 import { WorldSystem } from '@/systems/WorldSystem'
 import { Dispatcher } from './Dispatcher'
 
@@ -15,6 +16,7 @@ export function initializeGame() {
   new WorldSystem(dispatcher)
   new EffectSystem(dispatcher)
   new AquariumSystem(dispatcher)
+  new TravelSystem(dispatcher)
 
   // Create the game loop
   const loop = new GameLoop((deltaTime) => {

@@ -18,7 +18,7 @@ export const usePlayerStateStore = defineStore('player_state', {
     },
     buffs: [],
     items: [],
-    location: 'greenrock_lake',
+    location: 'greenrock_beach',
   }),
   actions: {
     addMoney(amount: number) {

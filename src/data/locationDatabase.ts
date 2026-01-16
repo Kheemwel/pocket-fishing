@@ -1,7 +1,6 @@
 import type { LocationDatabase } from '@/types/location'
-import type { DeepReadonly } from './deepReadOnly'
 
-export const LOCATION_DB: DeepReadonly<LocationDatabase> = {
+export const LOCATION_DB: LocationDatabase = {
   greenrock_town: {
     name: 'Greenrock Town',
     seasonMode: { type: 'global' },
@@ -10,25 +9,30 @@ export const LOCATION_DB: DeepReadonly<LocationDatabase> = {
         name: 'Greenrock Lake',
         travelTimeFromOrigin: 20,
         catchables: ['fish_carp', 'fish_gold', 'junk_boot'],
+        tags: ['fishing'],
       },
       greenrock_river: {
         name: 'Greenrock River',
         travelTimeFromOrigin: 15,
         catchables: [],
+        tags: ['fishing'],
       },
       greenrock_beach: {
         name: 'Greenrock Beach',
         travelTimeFromOrigin: 0,
         catchables: [],
+        tags: ['fishing'],
       },
       greenrock_cave: {
         name: 'Greenrock Cave',
         travelTimeFromOrigin: 30,
         catchables: [],
+        tags: ['fishing'],
       },
       greenrock_shop: {
         travelTimeFromOrigin: 10,
         name: 'Greenrock Shop',
+        tags: ['shop'],
       },
     },
   },
