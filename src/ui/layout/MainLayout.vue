@@ -10,6 +10,9 @@ import DevUI from '../components/DevUI.vue'
       <RouterLink to="/">Fishing</RouterLink>
       <RouterLink to="/inventory">Inventory</RouterLink>
       <RouterLink to="/shop">Shop</RouterLink>
+      <RouterLink to="/aquarium">Aquarium</RouterLink>
+      <RouterLink to="/crafting">Crafting</RouterLink>
+      <RouterLink to="/enchanting">Enchanting</RouterLink>
     </nav>
 
     <main>

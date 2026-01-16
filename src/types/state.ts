@@ -12,7 +12,10 @@ export interface PlayerState {
   luck: number
   xpMultiplier: number
   equipments: {
-    rod: RodId
+    rod: {
+      id: RodId
+      passives: string[]
+    }
     bait?: BaitId
   }
   buffs: ActiveBuff[]
@@ -26,9 +29,14 @@ export interface FishingState {
   currentCatch?: InventoryItem
 }
 
-export interface AquariumState {
+export interface AquariumInstance {
+  id: string
   slots: AquariumSlot[]
-  items: InventoryItem[]
+  productionProgress: number
+}
+
+export interface AquariumState {
+  aquariums: AquariumInstance[]
 }
 
 // export interface WorldState {

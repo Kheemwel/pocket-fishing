@@ -78,7 +78,7 @@ export class EffectSystem {
   private isPassiveActive(passive: Passive): boolean {
     switch (passive.activation.condition) {
       case 'rodEquipped':
-        return this.playerState.equipments.rod === passive.activation.rod
+        return this.playerState.equipments.rod.id === passive.activation.rod
       case 'baitEquipped':
         return this.playerState.equipments.bait === passive.activation.bait
       default:

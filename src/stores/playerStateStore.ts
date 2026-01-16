@@ -11,7 +11,10 @@ export const usePlayerStateStore = defineStore('player_state', {
     luck: 0,
     xpMultiplier: 1,
     equipments: {
-      rod: 'rod_basic',
+      rod: {
+        id: 'rod_basic',
+        passives: [],
+      },
     },
     buffs: [],
     items: [],
@@ -30,6 +33,9 @@ export const usePlayerStateStore = defineStore('player_state', {
     removeItem(item: InventoryItem) {
       const inventoryManager = new InventoryManager(this.items)
       inventoryManager.removeItem(item.itemId, item.quantity)
+    },
+    enchantRod(passiveId: string) {
+      this.equipments.rod.passives.push(passiveId)
     },
   },
 })

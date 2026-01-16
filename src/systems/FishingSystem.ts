@@ -50,7 +50,7 @@ export class FishingSystem {
 
   private waiting() {
     this.dispatcher.subscribe('waiting', () => {
-      const rod = this.playerState.equipments.rod
+      const rod = this.playerState.equipments.rod.id
       const bait = this.playerState.equipments.bait
 
       const totalWaitTime = FishService.calculateTotalWaitTime(rod, bait as BaitId)
@@ -87,7 +87,7 @@ export class FishingSystem {
     this.dispatcher.subscribe('fishBite', ({ fish }) => {
       this.fishingState.currentCatch = fish
 
-      const rod = this.playerState.equipments.rod
+      const rod = this.playerState.equipments.rod.id
       const bait = this.playerState.equipments.bait
       const totalControl = FishService.calculateTotalControl(rod, bait)
       const totalResilience = FishService.calculateTotalResilience(
