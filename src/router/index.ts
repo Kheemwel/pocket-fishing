@@ -9,6 +9,7 @@ const router = createRouter({
       children: [
         { path: '', component: () => import('../ui/screens/FishingScreen.vue') },
         { path: 'inventory', component: () => import('../ui/screens/InventoryScreen.vue') },
+        { path: 'shop', component: () => import('../ui/screens/ShopScreen.vue') },
       ],
     },
   ],

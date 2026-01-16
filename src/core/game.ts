@@ -3,7 +3,7 @@ import { EffectSystem } from '@/systems/EffectSystem'
 import { FishingSystem } from '@/systems/FishingSystem'
 import { PlayerSystem } from '@/systems/PlayerSystem'
 import { WorldSystem } from '@/systems/WorldSystem'
-import { Dispatcher } from './dispatcher'
+import { Dispatcher } from './Dispatcher'
 
 export function initializeGame() {
   const dispatcher = new Dispatcher()
