@@ -30,6 +30,7 @@ const currentLocationTags = computed(() => {
       <RouterLink to="/aquarium">Aquarium</RouterLink>
       <RouterLink to="/crafting">Crafting</RouterLink>
       <RouterLink to="/enchanting">Enchanting</RouterLink>
+      <RouterLink to="/settings">Settings</RouterLink>
     </nav>
 
     <main>

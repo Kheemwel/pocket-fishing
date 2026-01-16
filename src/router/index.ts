@@ -15,6 +15,7 @@ const router = createRouter({
         { path: 'aquarium', component: () => import('../ui/screens/AquariumScreen.vue') },
         { path: 'crafting', component: () => import('../ui/screens/CraftingScreen.vue') },
         { path: 'enchanting', component: () => import('../ui/screens/EnchantingScreen.vue') },
+        { path: 'settings', component: () => import('../ui/screens/SettingsScreen.vue') },
       ],
     },
   ],

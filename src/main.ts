@@ -7,6 +7,7 @@ import App from './App.vue'
 import router from './router'
 import { initializeGame } from './core/game'
 import { useDevStore } from './stores/devStore'
+import { PersistenceService } from './services/PersistenceService'
 
 const pinia = createPinia()
 setActivePinia(pinia) // IMPORTANT
@@ -14,6 +15,8 @@ setActivePinia(pinia) // IMPORTANT
 const game = initializeGame()
 const devStore = useDevStore()
 devStore.setDispatcher(game.dispatcher)
+
+PersistenceService.loadFromLocalStorage()
 
 const app = createApp(App)
 app.use(pinia)
