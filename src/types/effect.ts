@@ -20,6 +20,10 @@ export interface EffectParameter {
   readonly changeTime: { readonly time?: TimeCycle }
   readonly grantRandomItem: { readonly lootId: LootTableId }
   readonly applyBuff: { buffId: BuffId }
+  readonly chance: {
+    readonly chance: number
+    readonly effects: Effect<EffectType>[]
+  }
 }
 
 export type EffectType = keyof EffectParameter

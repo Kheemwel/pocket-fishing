@@ -6,6 +6,7 @@ import type { BaitId, RodId } from './item'
 type PassiveActivation =
   | { condition: 'rodEquipped'; rod: RodId }
   | { condition: 'baitEquipped'; bait: BaitId }
+  | { condition: 'enchanted' }
 
 export interface Passive {
   readonly name: string

@@ -48,7 +48,12 @@ export const LOCATION_DB: LocationDatabase = {
       bluestone_isle_cave: {
         name: 'Bluestone Cave',
         travelTimeFromOrigin: 65,
-        catchables: [],
+        catchables: ['rune_of_duplication'],
+      },
+      bluestone_enchant_altar: {
+        name: 'Enchant Altar',
+        travelTimeFromOrigin: 70,
+        tags: ['enchant'],
       },
     },
   },
