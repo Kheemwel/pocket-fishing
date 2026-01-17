@@ -4,4 +4,5 @@ export interface Rarity {
   name: string
   order: number
   luckMultiplier: number
+  color?: string
 }

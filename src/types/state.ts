@@ -37,6 +37,7 @@ export interface AquariumInstance {
 
 export interface AquariumState {
   aquariums: AquariumInstance[]
+  lastUpdate: number
 }
 
 // export interface WorldState {

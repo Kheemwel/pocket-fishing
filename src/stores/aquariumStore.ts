@@ -10,5 +10,11 @@ export const useAquariumStore = defineStore('aquarium', {
         productionProgress: 0,
       },
     ],
+    lastUpdate: Date.now(),
   }),
+  actions: {
+    addFish(slot: number, fishId: any) {
+      this.aquariums[0].slots[slot] = { fishId }
+    },
+  },
 })
