@@ -46,4 +46,14 @@ export const WEATHER_RULES: WeatherRules = {
     // Only visible in the dead of winter on the clearest nights
     winter: { night: 15 },
   },
+  rainbow: {
+    spring: { day: 5 },
+    summer: { day: 10 },
+  },
+  meteor_shower: {
+    spring: { night: 1 },
+    summer: { night: 5 },
+    autumn: { night: 5 },
+    winter: { night: 3 },
+  },
 }

@@ -12,6 +12,8 @@ export type Weather =
   | 'stormy'
   | 'blizzard'
   | 'aurora'
+  | 'rainbow'
+  | 'meteor_shower'
 
 export interface WorldContext {
   season: Season
