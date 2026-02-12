@@ -6,53 +6,21 @@ const playerStateStore = usePlayerStateStore()
 </script>
 
 <template>
-  <div id="container">
-    Inventory
+  <div class="h-full flex flex-col gap-4">
+    <h1 class="text-xl font-bold px-4 pt-2">Inventory</h1>
 
-    <div id="inventory">
+    <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3 p-4 bg-base-200/50 rounded-box overflow-auto flex-1">
       <div
-        class="items"
+        class="flex flex-col items-center justify-center p-2 rounded-lg bg-base-100 hover:bg-primary hover:text-primary-content transition-colors duration-200 aspect-square shadow-sm"
         v-for="item in playerStateStore.items"
         :key="item.itemId"
         :style="{
-          borderWidth: '2px',
-          borderStyle: 'solid',
-          borderColor: `var(--rarity-${ITEM_DB[item.itemId].rarity})`,
+          border: `2px solid var(--rarity-${ITEM_DB[item.itemId].rarity})`,
         }"
       >
-        <span>{{ item.itemId }}</span>
-        <span>{{ item.quantity }}</span>
+        <span class="text-xs font-bold truncate w-full">{{ item.itemId }}</span>
+        <span class="text-sm opacity-70">{{ item.quantity }}</span>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-#container {
-  height: 100%;
-}
-
-#inventory {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 15%);
-  grid-template-rows: repeat(auto-fill, 5%);
-  align-items: start;
-  gap: 8px;
-  height: 100%;
-  padding: 12px;
-}
-
-.items {
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.items:hover {
-  background-color: lightblue;
-  color: black;
-}
-</style>

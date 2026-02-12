@@ -5,84 +5,54 @@ const store = useDevStore()
 </script>
 
 <template>
-  <input
-    id="dev-button"
-    type="button"
-    :value="store.isDevMode ? 'Close' : 'Dev Mode'"
+  <button
+    class="btn btn-xs btn-outline btn-accent fixed top-2 right-2 z-[100] rounded-md backdrop-blur-sm"
     @click="store.toggleDevMode"
-  />
-  <div id="container" v-if="store.isDevMode">
-    <input class="dev-btn" type="button" value="Show Game State" @click="store.showGameState" />
-    <input class="dev-btn" type="button" value="Show World State" @click="store.showWorldState" />
-    <input class="dev-btn" type="button" value="Change Time Cycle" @click="store.changeTimeCycle" />
-    <input
-      class="dev-btn"
-      type="button"
-      value="Change Season to Winter"
-      @click="store.changeSeasonToWinter"
-    />
-    <input
-      class="dev-btn"
-      type="button"
-      value="Check Spring Weather"
-      @click="store.checkSpringWeather"
-    />
-    <input
-      class="dev-btn"
-      type="button"
-      value="Check Winter Weather"
-      @click="store.checkWinterWeather"
-    />
-    <input class="dev-btn" type="button" value="Equip Dev Rod" @click="store.equipDevRod" />
-    <input class="dev-btn" type="button" value="Equip Fast Rod" @click="store.equipFastRod" />
-    <input class="dev-btn" type="button" value="Equip Basic Rod" @click="store.equipBasicRod" />
-    <input
-      class="dev-btn"
-      type="button"
-      value="Equip Try Hard Rod"
-      @click="store.equipTryHardRod"
-    />
-    <input class="dev-btn" type="button" value="Cast Rod" @click="store.castRod" />
-    <input class="dev-btn" type="button" value="Add Items" @click="store.addItems" />
-    <input class="dev-btn" type="button" value="Check Fish Loot" @click="store.checkFishLoot" />
-    <input class="dev-btn" type="button" value="Check Loot Table" @click="store.checkLootTable" />
-    <input class="dev-btn" type="button" value="Get All Item" @click="store.getAllItem" />
+  >
+    {{ store.isDevMode ? 'Close' : 'Dev Mode' }}
+  </button>
+
+  <div
+    v-if="store.isDevMode"
+    class="fixed inset-0 bg-base-300/98 z-[90] p-6 pt-12 overflow-auto"
+  >
+    <h2 class="text-xs uppercase font-bold opacity-50 mb-4 tracking-widest">Developer Console</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+      <button class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case" @click="store.showGameState">Show Game State</button>
+      <button class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case" @click="store.showWorldState">Show World State</button>
+      <button class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case" @click="store.changeTimeCycle">Change Time Cycle</button>
+      <button
+        class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case"
+        @click="store.changeSeasonToWinter"
+      >
+        Winter
+      </button>
+      <button
+        class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case"
+        @click="store.checkSpringWeather"
+      >
+        Spring Weather
+      </button>
+      <button
+        class="btn btn-neutral btn-xs h-auto min-h-8 py-1 normal-case"
+        @click="store.checkWinterWeather"
+      >
+        Winter Weather
+      </button>
+      <button class="btn btn-secondary btn-xs h-auto min-h-8 py-1 normal-case" @click="store.equipDevRod">Equip Dev Rod</button>
+      <button class="btn btn-secondary btn-xs h-auto min-h-8 py-1 normal-case" @click="store.equipFastRod">Equip Fast Rod</button>
+      <button class="btn btn-secondary btn-xs h-auto min-h-8 py-1 normal-case" @click="store.equipBasicRod">Equip Basic Rod</button>
+      <button
+        class="btn btn-secondary btn-xs h-auto min-h-8 py-1 normal-case"
+        @click="store.equipTryHardRod"
+      >
+        Try Hard Rod
+      </button>
+      <button class="btn btn-primary btn-xs h-auto min-h-8 py-1 normal-case" @click="store.castRod">Cast Rod</button>
+      <button class="btn btn-info btn-xs h-auto min-h-8 py-1 normal-case" @click="store.addItems">Add Items</button>
+      <button class="btn btn-info btn-xs h-auto min-h-8 py-1 normal-case" @click="store.checkFishLoot">Check Fish Loot</button>
+      <button class="btn btn-info btn-xs h-auto min-h-8 py-1 normal-case" @click="store.checkLootTable">Check Loot Table</button>
+      <button class="btn btn-info btn-xs h-auto min-h-8 py-1 normal-case" @click="store.getAllItem">Get All Items</button>
+    </div>
   </div>
 </template>
-
-<style scoped>
-#dev-button {
-  z-index: 99;
-  width: 100px;
-  border-radius: 6px;
-  top: 0;
-  right: 0;
-  position: absolute;
-  background-color: cyan;
-  padding: 5px;
-  font-size: 1rem;
-}
-
-#container {
-  background-color: rgba(0, 0, 0, 0.9);
-  position: absolute;
-  z-index: 90;
-  height: 100%;
-  width: 100%;
-  padding: 3%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 15%);
-  grid-template-rows: repeat(auto-fill, 5%);
-  align-items: start;
-  gap: 8px;
-}
-
-.dev-btn {
-  padding: 5px;
-  font-size: 1rem;
-  width: 100%;
-  height: 100%;
-  white-space: normal;
-  word-wrap: break-word;
-}
-</style>

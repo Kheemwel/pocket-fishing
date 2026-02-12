@@ -1,9 +1,9 @@
-import './assets/styles/main.css'
+import './assets/styles/base.css'
 
 import { createApp } from 'vue'
 import { createPinia, setActivePinia } from 'pinia'
 
-import App from './App.vue'
+import App from "./App.vue"
 import router from './router'
 import { initializeGame } from './core/game'
 
