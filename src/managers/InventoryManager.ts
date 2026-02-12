@@ -59,9 +59,9 @@ export class InventoryManager {
     })
   }
 
-  useItem(itemId: ItemId) {
+  removeItem(itemId: ItemId, quantity = 1) {
     const item = this.inventory.find((el) => el.itemId === itemId) as InventoryItem
-    item!.quantity -= 1
+    item!.quantity -= quantity
     this.inventory = this.inventory.filter((item) => item.quantity > 0)
   }
 }

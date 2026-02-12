@@ -78,9 +78,11 @@ export class EffectSystem {
   private isPassiveActive(passive: Passive): boolean {
     switch (passive.activation.condition) {
       case 'rodEquipped':
-        return this.playerState.equipments.rod === passive.activation.rod
+        return this.playerState.equipments.rod.id === passive.activation.rod
       case 'baitEquipped':
         return this.playerState.equipments.bait === passive.activation.bait
+      case 'enchanted':
+        return this.playerState.equipments.rod.passives.includes(passive.id)
       default:
         return false
     }
@@ -174,6 +176,15 @@ export class EffectSystem {
       case 'modifyCatch':
         const modifyCatchParam = effect.params as EffectParameter['modifyCatch']
         this.fishingState.currentCatch!.quantity = modifyCatchParam.quantity as number
+        break
+
+      case 'chance':
+        const chanceParam = effect.params as EffectParameter['chance']
+        if (Math.random() < chanceParam.chance) {
+          chanceParam.effects.forEach((effect) => {
+            this.executeEffect(effect)
+          })
+        }
         break
     }
   }

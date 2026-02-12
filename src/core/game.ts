@@ -1,9 +1,13 @@
 import { GameLoop } from '@/managers/LoopManager'
+import { AquariumSystem } from '@/systems/AquariumSystem'
 import { EffectSystem } from '@/systems/EffectSystem'
 import { FishingSystem } from '@/systems/FishingSystem'
+import { LevelingSystem } from '@/systems/LevelingSystem'
+import { PersistenceSystem } from '@/systems/PersistenceSystem'
 import { PlayerSystem } from '@/systems/PlayerSystem'
+import { TravelSystem } from '@/systems/TravelSystem'
 import { WorldSystem } from '@/systems/WorldSystem'
-import { Dispatcher } from './dispatcher'
+import { Dispatcher } from './Dispatcher'
 
 export function initializeGame() {
   const dispatcher = new Dispatcher()
@@ -13,6 +17,10 @@ export function initializeGame() {
   new PlayerSystem(dispatcher)
   new WorldSystem(dispatcher)
   new EffectSystem(dispatcher)
+  new AquariumSystem(dispatcher)
+  new TravelSystem(dispatcher)
+  new LevelingSystem(dispatcher)
+  new PersistenceSystem(dispatcher)
 
   // Create the game loop
   const loop = new GameLoop((deltaTime) => {

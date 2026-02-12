@@ -5,6 +5,7 @@ import { CATCHABLE_DB } from './catchableDatabase'
 import { CONSUMABLE_DB } from './consumableDatabase'
 import { MATERIAL_DB } from './materialDatabase'
 import { ROD_DB } from './rodDatabase'
+import { RUNE_DB } from './runeDatabase'
 
 export const items = {
   ...CATCHABLE_DB,
@@ -12,6 +13,7 @@ export const items = {
   ...BAIT_DB,
   ...CONSUMABLE_DB,
   ...MATERIAL_DB,
+  ...RUNE_DB,
 } as const
 
 export const ITEM_DB = items satisfies DeepReadonly<Record<ItemId, Item>>

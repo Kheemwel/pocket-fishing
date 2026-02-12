@@ -4,7 +4,7 @@ import { type LootTableId } from '@/data/weighted/lootTable'
 import type { InventoryItem } from '@/types/inventory'
 import type { WeightedTable } from '@/types/weighted'
 import { defineStore } from 'pinia'
-import { inject, ref } from 'vue'
+import { inject, ref, shallowRef } from 'vue'
 import { useWorldStateStore } from './worldStateStore'
 import { usePlayerStateStore } from './playerStateStore'
 import { useFishingStateStore } from './fishingStateStore'
@@ -18,7 +18,9 @@ import type { Season, TimeCycle } from '@/types/world'
 import { LocationService } from '@/services/LocationService'
 
 export const useDevStore = defineStore('dev', () => {
-  const dispatcher = inject<{ dispatcher: Dispatcher }>('game')?.dispatcher
+  const dispatcher = shallowRef<Dispatcher | undefined>(
+    inject<{ dispatcher: Dispatcher }>('game')?.dispatcher,
+  )
   const worldState = useWorldStateStore()
   const playerState = usePlayerStateStore()
   const fishingState = useFishingStateStore()
@@ -187,6 +189,10 @@ export const useDevStore = defineStore('dev', () => {
     debugLootGeneration('treasure_chest')
   }
 
+  function setDispatcher(d: Dispatcher) {
+    dispatcher.value = d
+  }
+
   function getAllItem() {
     const items: InventoryItem[] = []
 
@@ -229,6 +235,8 @@ export const useDevStore = defineStore('dev', () => {
     checkFishLoot,
     checkLootTable,
     getAllItem,
+    setDispatcher,
+    dispatcher,
   }
 })
 

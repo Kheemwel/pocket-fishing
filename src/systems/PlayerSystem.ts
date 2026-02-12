@@ -43,7 +43,10 @@ export class PlayerSystem {
       if (!itemTags.includes('equipable')) return
 
       if (itemTags.includes('rod')) {
-        this.playerState.equipments.rod = itemId as RodId
+        this.playerState.equipments.rod = {
+          id: itemId as RodId,
+          passives: [],
+        }
       }
 
       if (itemTags.includes('bait')) {

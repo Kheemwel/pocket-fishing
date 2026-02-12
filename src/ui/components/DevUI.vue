@@ -1,10 +1,23 @@
 <script lang="ts" setup>
 import { useDevStore } from '@/stores/devStore'
+import { usePlayerStateStore } from '@/stores/playerStateStore'
+import { LEVEL_CURVE } from '@/data/levelingDatabase'
+import { computed } from 'vue'
 
 const store = useDevStore()
+const playerState = usePlayerStateStore()
+
+const xpProgress = computed(() => {
+  const xpNeeded = LEVEL_CURVE[playerState.level]
+  return `${playerState.xp.toFixed(2)} / ${xpNeeded}`
+})
 </script>
 
 <template>
+  <div id="player-stats">
+    <div>Level: {{ playerState.level }}</div>
+    <div>XP: {{ xpProgress }}</div>
+  </div>
   <input
     id="dev-button"
     type="button"
@@ -84,5 +97,16 @@ const store = useDevStore()
   height: 100%;
   white-space: normal;
   word-wrap: break-word;
+}
+
+#player-stats {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 100;
 }
 </style>

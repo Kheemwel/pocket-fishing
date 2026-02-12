@@ -22,6 +22,7 @@ export const CATCHABLE_DB = {
     category: 'fish',
     rarity: 'common',
     baseValue: 10,
+    xp: 5,
     fishingStats: {
       resilience: 90,
       progress_speed: 0,
@@ -32,6 +33,7 @@ export const CATCHABLE_DB = {
     category: 'fish',
     rarity: 'common',
     baseValue: 15,
+    xp: 10,
     resilience: 75,
     fishingStats: {
       resilience: 90,
@@ -43,6 +45,7 @@ export const CATCHABLE_DB = {
     category: 'trash',
     rarity: 'trash',
     baseValue: 2,
+    xp: 1,
     fishingStats: {
       resilience: 99,
       progress_speed: 0,

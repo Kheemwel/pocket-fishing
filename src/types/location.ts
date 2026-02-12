@@ -9,7 +9,10 @@ type GreenrockAreas =
   | 'greenrock_beach'
   | 'greenrock_cave'
   | 'greenrock_shop'
-type BluestoneIsleArea = 'bluestone_isle_beach' | 'bluestone_isle_cave'
+type BluestoneIsleArea =
+  | 'bluestone_isle_beach'
+  | 'bluestone_isle_cave'
+  | 'bluestone_enchant_altar'
 type RedwaterIslandArea =
   | 'redwater_island_beach'
   | 'redwater_island_lagoon'
@@ -28,6 +31,7 @@ export interface Area {
   readonly description?: string
   readonly travelTimeFromOrigin: number // in in-game minutes
   readonly catchables?: DeepReadonly<CatchableId[]>
+  readonly tags?: ReadonlyArray<'fishing' | 'shop' | 'enchant'>
 }
 
 export type SeasonMode =

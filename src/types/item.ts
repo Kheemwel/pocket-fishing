@@ -38,6 +38,7 @@ export interface Item {
   readonly rarity: RarityId
   readonly stackable: boolean
   readonly baseValue?: number
+  readonly xp?: number
   readonly fishingStats?: FishingStats
   readonly tags: DeepReadonly<ItemTags[]>
   readonly effects?: DeepReadonly<EffectId[]>
